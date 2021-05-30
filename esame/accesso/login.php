@@ -90,18 +90,23 @@ if (isset($_POST["email"]) && strlen($_POST["email"]>0)) {
     $verifica->bindParam(":pwd",$raw_data['pwd']);
     $verifica->execute();
     $res=$verifica->fetch();
-    if (count($res)>0) {
-      $_SESSION["email"]=$raw_data['email'];
-      $_SESSION["pwd"]=$raw_data['pwd'];
-      $_SESSION["adm"]=$res["super"];
-      $_SESSION["id"]=$res["id_utente"];
-      $_POST["email"]="0";
-      echo "<script>alert('Login effettuato con successo');</script>";
-      echo "<script>window.location.replace('http://localhost/esame/'); </script>";
+    try{
+      if (count($res)>0) {
+        $_SESSION["email"]=$raw_data['email'];
+        $_SESSION["pwd"]=$raw_data['pwd'];
+        $_SESSION["adm"]=$res["super"];
+        $_SESSION["id"]=$res["id_utente"];
+        $_POST["email"]="0";
+        echo "<script>alert('Login effettuato con successo');</script>";
+        echo "<script>window.location.replace('http://localhost/esame/'); </script>";
 
-    }else {
+      }else {
+        echo "<script>alert('Ricontrollare i dati inseriti');</script>";
+      }
+    }catch(Exception $e){
       echo "<script>alert('Ricontrollare i dati inseriti');</script>";
     }
+
   }else {
     echo "<script>alert('Ricontrollare i dati inseriti');</script>";
   }

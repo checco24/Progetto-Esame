@@ -69,10 +69,10 @@
 								</div>
 
                 <div class="mb-3">
-									<label class="mb-2 text-muted" for="password2">Password</label>
+									<label class="mb-2 text-muted" for="password2">Ripetere la password</label>
 									<input id="password2" type="password" class="form-control" name="password2" required>
 								    <div class="invalid-feedback">
-								    	Password2 is required
+								    	Password is required
 							    	</div>
 								</div>
 

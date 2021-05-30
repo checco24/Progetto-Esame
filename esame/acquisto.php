@@ -192,7 +192,7 @@
                         <div class="card-body">
                           <h5 class="card-title">'.$data["nome"].'</h5>
                           <p class="card-text">'.$info.'</p>
-                          <p class="card-text">Noleggiala a:'.$data["prezzo"].'€/giorno</p>
+                          <p class="card-text">Comprala a: '.$data["prezzo"].'€</p>
                         </div>';
                         if (isset($data["data_vendita"])) {
                           $cards.='

@@ -177,8 +177,8 @@
                 select automobile.*, marca.nome_marca, sede.cap,sede.citta,sede.via,sede.civico,noleggio.data_fine,vendita.data_vendita from automobile
                 left join marca on automobile.id_marca = marca.id_marca
                 left join sede on automobile.id_sede = sede.id_sede
-                left join noleggio on automobile.id_automobile =noleggio.id_automobile
-                left join vendita on automobile.id_automobile =vendita.id_automobile
+                left join noleggio on automobile.id_automobile = noleggio.id_automobile
+                left join vendita on automobile.id_automobile = vendita.id_automobile
                 ");
                 $automobili->execute();
                 while($data = $automobili->fetch( PDO::FETCH_ASSOC )){
@@ -194,7 +194,7 @@
                       <div class="card-body">
                         <h5 class="card-title">'.$data["nome"].'</h5>
                         <p class="card-text">'.$info.'</p>
-                        <p class="card-text">Noleggiala a:'.$data["prezzo"].'€/giorno</p>
+                        <p class="card-text">Comprala a:'.$data["prezzo"].'€/giorno</p>
                       </div>';
                       if ($data["data_vendita"]>date("Y-m-d")) {
                         $cards.='

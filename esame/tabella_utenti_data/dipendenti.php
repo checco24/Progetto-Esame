@@ -8,6 +8,7 @@
         <th scope="col">cognome</th>
         <th scope="col">email</th>
         <th scope="col">admin</th>
+        <th scope="col">sede dipendente</th>
         <th scope="col">aggiungi/rimuovi potere admin</th>
         <th scope="col">rimuovi dipendente</th>
       </tr>

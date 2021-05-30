@@ -172,12 +172,11 @@ if (isset($_POST["noleggio"])) {
 }
 
 if (isset($_POST["compra"])) {
-  $prenotazione=$admin->prepare("insert into vendita (data_vendita,id_utente,id_automobile,id_sede)
-  values(:inizio,:utente,:id_auto,:sede) ");
+  $prenotazione=$admin->prepare("insert into vendita (data_vendita,id_utente,id_automobile)
+  values(:inizio,:utente,:id_auto) ");
   $prenotazione->bindParam(":inizio",$_POST["prenotazione_app"]);
   $prenotazione->bindParam(":utente",$_SESSION["id"]);
   $prenotazione->bindParam(":id_auto",$_POST["id"]);
-  $prenotazione->bindParam(":sede",$_SESSION["sede"]);
   $prenotazione->execute();
   $_POST["compra"]="";
   unset($_POST["compra"]);
