@@ -190,7 +190,7 @@
                       <div class="card" style="max-width:80%; height: auto; ">
                         <img src="'.$path.'" class="card-img-top rounded-top"  alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">'.$data["nome"].'</h5>
+                          <h5 class="card-title">'.$data["modello"].'</h5>
                           <p class="card-text">'.$info.'</p>
                           <p class="card-text">Noleggiala a:'.$data["prezzo"].'€/giorno</p>
                         </div>';

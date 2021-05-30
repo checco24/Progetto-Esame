@@ -29,8 +29,8 @@
 							<form method="POST" action="" class="needs-validation" autocomplete="off">
 
                 <div class="mb-3">
-                  <label class="mb-2 text-muted" for="km">Nome</label>
-                  <input id="nome" type="text" class="form-control" name="nome" required>
+                  <label class="mb-2 text-muted" for="km">modello</label>
+                  <input id="modello" type="text" class="form-control" name="modello" required>
                   <div class="invalid-feedback">
                     nome is required
                   </div>
@@ -148,10 +148,10 @@
   require_once 'footer.php';
   require_once("data/agg_auto.php");
 
-if (isset($_POST["nome"]) && isset($_POST["km"])) {
+if (isset($_POST["modello"]) && isset($_POST["km"])) {
 
   $data=[
-    'nome'=>$_POST['nome'],
+    'modello'=>$_POST['modello'],
     'prezzo'=>$_POST['prezzo'],
     'cambio'=>$_POST['cambio'],
     'km'=>$_POST['km'],
@@ -164,9 +164,9 @@ if (isset($_POST["nome"]) && isset($_POST["km"])) {
     'utente'=>$_SESSION['id']
   ];
 
-$query =$agg_auto->prepare("insert into automobile (nome, prezzo, cambio, km_percorsi, anno_prod, condizione, operazione, tipo, id_marca, id_sede, id_dipendente)
-values (:nome, :prezzo, :cambio, :km_percorsi, :anno_prod, :condizione, :operazione, :tipo, :id_marca, :id_sede, :id_utente)");
-$query->bindParam(":nome",$data["nome"]);
+$query =$agg_auto->prepare("insert into automobile (modello, prezzo, cambio, km_percorsi, anno_prod, condizione, operazione, tipo, id_marca, id_sede, id_dipendente)
+values (:modello, :prezzo, :cambio, :km_percorsi, :anno_prod, :condizione, :operazione, :tipo, :id_marca, :id_sede, :id_utente)");
+$query->bindParam(":modello",$data["modello"]);
 $query->bindParam(":prezzo",$data["prezzo"]);
 $query->bindParam(":cambio",$data["cambio"]);
 $query->bindParam(":km_percorsi",$data["km"]);

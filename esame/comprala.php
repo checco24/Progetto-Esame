@@ -46,7 +46,7 @@
                       <div class="col md-auto">
                       <div class="col-md-8">
                         <div class="card-body">
-                          <h5 class="card-title">'.$data["nome"].'</h5>
+                          <h5 class="card-title">'.$data["modello"].'</h5>
                           <p class="card-text">'.$info.'</p>
                           <p class="card-text">Noleggiala a:'.$data["prezzo"].'€/giorno</p>
                           <form method="post" action="">
@@ -77,7 +77,7 @@
                       <div class="col md-auto">
                       <div class="col-md-8">
                         <div class="card-body">
-                          <h5 class="card-title">'.$data["nome"].'</h5>
+                          <h5 class="card-title">'.$data["modello"].'</h5>
                           <p class="card-text">'.$info.'</p>
                           <p class="card-text">Coprala a:'.$data["prezzo"].'€</p>
                           <form method="post" action="">
